@@ -1,4 +1,4 @@
-# Merhaba ben Mustafa Çelebi. Bilgisayar mühendisliği ingilizce 1. sınıf öğrencisiyim. 
+# Merhaba ben Mustafa Çelebi. Bilgisayar mühendisliği İngilizce 1. sınıf öğrencisiyim.
 - Kodlama vs. uğraşmayı severim.
 - Arada hangisi kafama eserse spor yaparım.
 
