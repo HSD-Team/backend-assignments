@@ -1,4 +1,4 @@
-**#HAKKIMDA & EĞİTİMDEN BEKLENTİLERİM**
+# **HAKKIMDA & EĞİTİMDEN BEKLENTİLERİM**
 
 Ben Erva Nur Yiğit, Ankara Üniversitesi Yapay Zeka ve Veri Mühendisliği 2. sınıf öğrencisiyim. Kendimi geliştirmek adına bu yıl farklı projelerde yer alıyorum, HSD topluluğunun Mobil & Backend komitesinde de aktif olarak bulunuyorum.
 
