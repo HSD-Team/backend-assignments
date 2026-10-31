@@ -1,0 +1,36 @@
+# HSD backend repoları için .gitignore
+# Kalıplar başında "/" olmadığı için her alt klasörde (hafta-XX/ad-soyad/...) geçerlidir.
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Araç önbellekleri ve test çıktıları
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Sırlar ve yerel ayarlar
+.env
+*firebase-adminsdk*.json
+service-account*.json
+
+# Yerel veritabanları ve yüklenen dosyalar
+*.db
+*.sqlite3
+uploads/
+
+# Editör ve sistem
+.idea/
+*.swp
+*.log
+.DS_Store
+Thumbs.db
