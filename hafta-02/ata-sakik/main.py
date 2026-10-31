@@ -26,14 +26,15 @@ def is_passing(avg:float) -> bool:
     return avg >= 60    
     
 
-
-
-
-print("Not hesaplayıcı")
-avg = average(70,85)
-print(avg)
-print(letter_grade(avg))
-print(letter_grade(92))
-print(letter_grade(42))
-print(is_passing(avg))
-print(is_passing(55))
+def main(): -> None:
+    names = ["Ayşe","Mehmet","Zeynep","Can","Elif"]
+    midterms=[72,45,90,60,85]
+    finals=[88,60,95,40,70]
+    
+    
+    for i in range (len(names)):
+        avg = average(midterms[i],finals[i])
+        status = "Geçti" if is_passing(avg) else "Kaldı"
+        print(f"{names[i]}: avg: {avg:.2f} {letter_grade(avg)} {status}")
+        
+main()        
