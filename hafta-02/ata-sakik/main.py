@@ -26,7 +26,7 @@ def is_passing(avg:float) -> bool:
     return avg >= 60    
     
 
-def main(): -> None:
+def main() -> None:
     names = ["Ayşe","Mehmet","Zeynep","Can","Elif"]
     midterms=[72,45,90,60,85]
     finals=[88,60,95,40,70]
