@@ -30,9 +30,12 @@ def main() -> None:
     midterms = [60,70,80,20,40]
     finals = [80,70,60,50,40]
 
+    print(f"{'Name':<10} {'Average':<10} {'Harf':<6} {'Status':>10}") 
+    print("-" * 40)
     for i in range(len(names)):
         avg = average(midterms[i], finals[i])
         status = "Pass" if is_passing(avg) else "Fail"
-        print(f"{names[i]}: average: {avg:.2f} {letter_grade(avg)} {status}")
+        print(f"{names[i]:<10} {avg} {avg:10.2f} {letter_grade(avg):<6} {status}")
+    print("-" * 40)
 
 main()
