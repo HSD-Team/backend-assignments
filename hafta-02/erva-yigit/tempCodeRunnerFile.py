@@ -1,0 +1,1 @@
+0<= student_midterm <=100
