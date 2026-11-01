@@ -35,20 +35,22 @@ for _ in range(5):
             student_midterm = int(input("Student's Midterm Grade: "))
             if 0<= student_midterm <=100:
                 break
+            else:
+                print("Invalid grade. Please ensure your grade is between 0 and 100.")
+
         except ValueError:
             print("Invalid grade. Please ensure your grade is between 0 and 100.")
-            student_midterm = int(input("Student's Midterm Grade: "))
-        print("Invalid grade. Please ensure your grade is between 0 and 100.")
 
     while True:
         try:
             student_fin = int(input("Student's Final Grade: "))
             if 0<= student_fin <=100:
                 break
+            else:
+                print("Invalid grade. Please ensure your grade is between 0 and 100.")
+
         except ValueError:
             print("Invalid grade. Please ensure your grade is between 0 and 100.")
-            student_fin = int(input("Student's Final Grade: "))
-        print("Invalid grade. Please ensure your grade is between 0 and 100.")
 
     student_avg = average(student_midterm,student_fin)
 
