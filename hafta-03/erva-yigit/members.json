@@ -1,0 +1,26 @@
+[
+    {
+        "isim": "Eva",
+        "rol": "yazılımcı",
+        "diller": [
+            "python",
+            " c",
+            " c++"
+        ]
+    },
+    {
+        "isim": "Cennet",
+        "rol": "yapay zeka mühendisi",
+        "diller": [
+            "java",
+            " c7"
+        ]
+    },
+    {
+        "isim": "Murat",
+        "rol": "veri mühendisi",
+        "diller": [
+            "c"
+        ]
+    }
+]
