@@ -22,5 +22,27 @@
         "diller": [
             "c"
         ]
+    },
+    {
+        "isim": "şüheda",
+        "rol": "öğrerim görevlisi",
+        "diller": [
+            ""
+        ]
+    },
+    {
+        "isim": "Mami",
+        "rol": "Diş Hekimi",
+        "diller": [
+            ""
+        ]
+    },
+    {
+        "isim": "Irmak",
+        "rol": "İnşaat Mühendisi",
+        "diller": [
+            "Python",
+            " Java"
+        ]
     }
 ]
