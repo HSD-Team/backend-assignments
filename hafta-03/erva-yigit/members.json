@@ -1,0 +1,48 @@
+[
+    {
+        "isim": "Eva",
+        "rol": "yazılımcı",
+        "diller": [
+            "python",
+            " c",
+            " c++"
+        ]
+    },
+    {
+        "isim": "Cennet",
+        "rol": "yapay zeka mühendisi",
+        "diller": [
+            "java",
+            " c7"
+        ]
+    },
+    {
+        "isim": "Murat",
+        "rol": "veri mühendisi",
+        "diller": [
+            "c"
+        ]
+    },
+    {
+        "isim": "şüheda",
+        "rol": "öğrerim görevlisi",
+        "diller": [
+            ""
+        ]
+    },
+    {
+        "isim": "Mami",
+        "rol": "Diş Hekimi",
+        "diller": [
+            ""
+        ]
+    },
+    {
+        "isim": "Irmak",
+        "rol": "İnşaat Mühendisi",
+        "diller": [
+            "Python",
+            " Java"
+        ]
+    }
+]
