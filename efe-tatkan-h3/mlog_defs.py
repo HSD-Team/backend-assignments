@@ -14,13 +14,8 @@ class Memlist:
             self.members = i
         Memlist.init = True
         Memlist.glob = self
-
-    @classmethod
-    def classinit(cls):
-
-        """initializes static class variables."""
-
-        Memlist.init = False
+        
+        return self
 
     @classmethod
     def getglob(cls):
@@ -53,8 +48,6 @@ class Memlist:
     def mempos(self, name : str, cr : bool = False) -> int | None:
 
         """get the index of a member within the list. insert entry if 'cr' is True and the member doesn't exist."""
-
-        if not cr and len(self.members) == 0: raise MemberNotFoundError
 
         for i in range(len(self.members)):
             if name.lower() == self.members[i].lower(): 

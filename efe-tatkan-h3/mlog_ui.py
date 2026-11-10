@@ -16,13 +16,12 @@ print("""
         - list: dump the entire list in alphabetical order.
 
     ** you may enter 'exit' to quit the application and save the changes made in this session.
-    """)
 
-util.Memlist.classinit()
+    """)
 
 while True: 
 
-    i = input("\n>>> ")
+    i = input(">>> ")
 
     m = re.search(r"^\s*((\S*) *(\S*))\s*$", i)
     if not m:
@@ -43,7 +42,6 @@ while True:
                 print("error: member with the given name already exists - no operation performed.")
             except util.MemberNotFoundError:
                 list.mempos(name, True)
-                print(f"a new member {name} has been added.")
 
         case "list":
             list = util.Memlist.getglob()
@@ -72,19 +70,11 @@ while True:
                 print("error: a member with the given name could not be found - no operation performed.")
 
         case "exit":
-            if util.Memlist.init:
-                list = util.Memlist.getglob()
-                try:
-                    with open("members.json", "w") as f:
-                        json.dump(list.members, f)
-                    print("successfully saved the changes. exiting program...")
-                    break
-                except Exception:
-                    print("error: couldn't save successfully - shutdown cancelled.")
-            else:
-                print("no changes were made. exiting program...")
+            list = util.Memlist.getglob()
+            try:
+                with open("members.json", "w") as f:
+                    json.dump(list.members, f)
+                print("successfully saved the changes. exiting program...")
                 break
-
-        case _:
-            print(f"error: unknown command '{com}' - no operation performed.")
-            continue
+            except Exception:
+                print("error: couldn't save successfully - shutdown cancelled.")
