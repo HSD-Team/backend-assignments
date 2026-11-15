@@ -1,45 +1,34 @@
-from dataclasses import dataclass, asdict
-import jlist 
+import classes as cl
+import jlist
+import random
 
-class CapacityFullError(Exception): pass
-class AlreadyRegisteredError(Exception): pass
+mems = []
+chars = "abcdefghijklmnopqrstuvwxyz_" 
+nums = "0123456789" 
 
-@dataclass
-class Member:
-    id: str
-    name: str
-    major: str
+for i in range(8):
+    name = ''.join(random.choices(chars,k=10))
+    name2 = ''.join(random.choices(nums,k=10))
+    name3 = random.choice([cl.Member.MemRank.ADMIN, cl.Member.MemRank.MEMBER])
+    mems.append(cl.Member(name, name, name2, name3))
 
-@dataclass
-class Event:
-    id: str
-    title: str
-    date: str
-    
-    _quota: int
+testlist = jlist.JList("testevent")
+try: testlist.loadFromFile("test event.json")
+except FileNotFoundError: pass
+testevent = cl.Event("test event", "test event", "01.01.2027", 5, testlist)
 
-    @property
-    def quota(self):
-        return self._quota
+mems[3] = mems[2] #test double registration
 
-    @quota.setter
-    def quota(self, val):
-        self._quota = val
+for i in range(8):
+    try: 
+        print(f"\n## register attempt {i+1} ##")
+        testevent.register(mems[i])
+        print(f"""registered '{mems[i].name}' to testevent
+quota of testevent: {testevent.quota}""")
+    except cl.AlreadyRegisteredError:
+        print(f"couldn't register '{mems[i].name}' because they were already registered.")
+    except cl.CapacityFullError:
+        print(f"couldn't register '{mems[i].name}' because testevent has no capacity left.")
 
-    guestlist: jlist.JList
-
-    def register(self, member : Member):
-
-        if(self.quota <= 0):
-            raise CapacityFullError(f"the event '{self.title}' doesnt accept any more members.")
-        try: self.guestlist.addItem(asdict(member))
-        except jlist.ItemExistsError as e:
-            raise AlreadyRegisteredError(f"the member with the id '{member.id}' has been registered to this event already.") 
-        self.quota -= 1
-        
-@dataclass
-class Announcement:
-    id: str
-    title: str
-    desc: str
-    date: str
+testevent.save()
+print("\nsaved list to 'test event.json', exiting...")

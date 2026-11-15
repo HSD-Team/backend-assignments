@@ -9,18 +9,18 @@ class JList:
     """generalized json list with automatic alphabetical ordering, 
     designed to be used with multiple instances."""
 
-    def __init__(self, name : str, _init : list | None):
+    def __init__(self, name : str, _init : list | None = None):
         self.list= []
         if _init != None:
             self.list = _init
-            self.name = name
+        self.name = name
 
     def loadFromFile(self, _filename : str) -> None:
 
         """initialize the list from a formatted json file."""
 
         try: 
-            with open(_filename, "r") as f:
+            with open(_filename, "r", encoding="utf-8") as f:
                 j = json.load(f)
                 try:
                     e = j[self.name]
@@ -69,3 +69,11 @@ class JList:
             else: self.list[i] = item          #replace item
         except ItemNotFoundError as e:
             self.list.insert(e.args[0], item)  #item doesnt exist, insert in the list
+
+    def save(self, _filename : str) -> None:
+        with open(_filename, 'w+', encoding="utf-8") as f:
+            try: j = json.load(f)
+            except json.decoder.JSONDecodeError as e:
+                j = {}
+            j[self.name] = self.list
+            json.dump(j, f, ensure_ascii=False, indent=2)               #dump into the same file
